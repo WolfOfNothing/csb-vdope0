@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    <meta charset="UTF-8" />
+    <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE-edge"/>
+<meta name="viewport" content="width-device-width, initial"/>
+<title> demo </title>
+  </head>
+<body>
+  <h1 id="my"> My name is </h1>
+  <h1 id="F"> Francesco </h1>
+  <h1 id="nice"> Your mouse </h1>
+  <h1 id="nice"> creates light </h1> 
+<div id="app">
+<div class="rect rect1" data-hue="-10"></div>
+<div class="rect rect2" data-hue=" 30"></div>
+<div class="rect rect3" data-hue= "70"></div>
+<div class="rect rects" data-hue="200"></div>
+<style>
+h1{
+  color:white;
+  position: relative;
+  top:150px;
+  left: 200px;
+  z-index:20;
+
+}
+#nice {
+  left: 800px;
+  top: 300px;
+}
+#app{
+position:absolute;
+top:0;
+left:0;
+width:100vw ;
+height:100vh ;
+overflow:hidden;
+z-index: 0;
+
+}
+.rect{
+position:absolute;
+width:400px;
+height:300px;
+border-radius: 32px;
+background-clip: border-box;
+background-color: black;}
+.rect1 {
+top:100px;
+Left:100px;
+}
+.rect2{
+top: 100px;
+Left:700px;
+}
+.rect3{
+bottom:200px;
+Left: 100px;
+}
+.rects{
+Left:700px;
+bottom: 200px;
+}
+</style>
+<script>
+const app = document.getElementById("app")
+const all_rects = Array.from(document.querySelectorAll(".rect"))
+let mouseX = 0
+let mouseY = 0
+function update_rect (rect) {
+const pos = rect.getBoundingClientRect ()
+const hue = parseInt (rect.getAttribute('data-hue'))
+
+gradient ()
+}
+window.addEventListener("mousemove", function(ev){
+  mouseX = ev.clientX
+  mouseY = ev.clientY
+ 
+  app.style.backgroundImage = `radial-gradient(ellipse at ${mouseX}px ${mouseY}px, #fff, #bbb)`
+}
+)
+</script>
+  </body>
+</html>
