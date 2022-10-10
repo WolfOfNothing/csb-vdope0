@@ -9,27 +9,30 @@
 <title> demo </title>
   </head>
 <body>
-  <h1 id="my"> My name is </h1>
-  <h1 id="F"> Francesco </h1>
-  <h1 id="nice"> Your mouse </h1>
-  <h1 id="nice"> creates light </h1> 
+  
+  <h1 id="F"> VOLEVO </h1>
+  <h1 id="nice"> DIRTI </h1>
+  
 <div id="app">
 <div class="rect rect1" data-hue="-10"></div>
 <div class="rect rect2" data-hue=" 30"></div>
 <div class="rect rect3" data-hue= "70"></div>
 <div class="rect rects" data-hue="200"></div>
 <style>
+  BODY {
+    background-color: black;
+  }
 h1{
   color:white;
   position: relative;
-  top:150px;
-  left: 200px;
+  top:300px;
+  left: 220px;
   z-index:20;
 
 }
 #nice {
-  left: 800px;
-  top: 300px;
+  left: 850px;
+  top: 250px;
 }
 #app{
 position:absolute;
@@ -80,7 +83,7 @@ window.addEventListener("mousemove", function(ev){
   mouseX = ev.clientX
   mouseY = ev.clientY
  
-  app.style.backgroundImage = `radial-gradient(ellipse at ${mouseX}px ${mouseY}px, #fff, #bbb)`
+  app.style.backgroundImage = `radial-gradient(ellipse at ${mouseX}px ${mouseY}px, #ffff, #bbbb)`
 }
 )
 </script>
